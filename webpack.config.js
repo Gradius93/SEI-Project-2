@@ -2,33 +2,21 @@ const path = require('path')
 const webpack = require('webpack')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpack = new HtmlWebpackPlugin({
-  template: 'src/index.html',
-  filename: 'index.html',
-  inject: 'body'
-})
-
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const CopyWebpack = new CopyWebpackPlugin([
-  { from: './src/media', to: 'media' }
-])
-
-
-
-const HotModuleReplcement = new webpack.HotModuleReplacementPlugin()
 
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve('public'),
-    filename: 'app.js',
-    publicPath: '/'
+    path: path.resolve('dist'),
+    filename: 'app.js'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
-      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] }
+      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.(jpe?g|png|gif|svg)$/, loader: 'file-loader' }
     ]
   },
   devServer: {
@@ -37,5 +25,15 @@ module.exports = {
     port: 8000,
     open: true
   },
-  plugins: [HotModuleReplcement, HtmlWebpack, CopyWebpack]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      filename: 'index.html',
+      inject: 'body'
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to: 'assets' }
+    ])
+  ]
 }
