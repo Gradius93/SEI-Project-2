@@ -1,5 +1,4 @@
-# project-02
-API Project - Doggie Browser
+# Project 2: API Project - Doggie Browser
 
 ## Timeframe 
 2 days
