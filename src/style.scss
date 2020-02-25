@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Baloo|Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amaranth:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aclonica&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+$primary-font: 'Pacifico', cursive;
+$secondary-font: 'Anton', sans-serif;
+$tertiary-font: 'Amaranth', sans-serif;
+$fourth-font: 'Love Ya Like A Sister', cursive;
+$five-font: 'Rancho', cursive;
+$six-font: 'Berkshire Swash', cursive;
+$eight-font: 'Aclonica', sans-serif;
+$primary-color: #363636;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $tertiary-font;
+  background-color: #f6f0e6;
+  // background-image: url('/media/cartoon_dog1.jpg');
+}
+
+
+
+#hr1{
+  background-color: black;
+  height: 3px;
+}
+
+
+#background_main{
+  background-image: url('/media/cat_dog1.png');
+}
+
+#div_main{
+  background-color:	#f1d6cc;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 60px;
+  box-shadow: 6px 6px 10px 0 rgba(0,0,0,0.5);
+
+}
+
+
+#section_background{
+  padding-top: 4.4rem;
+  padding-bottom: 7rem;
+}
+
+#container_main{
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+#didi{
+  height: 120px;
+  width: 120px;
+}
+
+#chococat
+{
+  height: 120px;
+  width: 120px;
+}
+
+#dog_section
+{
+  padding: 5rem 7.5rem;
+}
+
+
+#welcome_letter{
+  color: #595959;
+}
+
+
+#welcome_subtitle{
+      font-size: 33px;
+      color: #696969;
+      padding-top: 20px;
+}
+
+
+
+#loading_letter{
+  color: #595959;
+
+}
+
+
+
+
+#didi_icons_align, #welcome_all_letters{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
+}
+
+#navbar-letter{
+  font-size: 1.4em;
+  padding-top: 3px;
+  padding-bottom: 3px;
+
+}
+
+#navbar_style{
+  font-family: $primary-font;
+}
+
+
+#dog_show_card{
+  font-family: $fourth-font;
+  font-size: 1.6em;
+}
+
+/*Effect to move the image*/
+@-webkit-keyframes spaceboots {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+/*Effect to move the image*/
+.shake {
+  -webkit-animation-name: spaceboots;
+  -webkit-animation-duration: 0.8s;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+#subtitle_is5{
+    font-size: 1.3rem;
+}
+
+#dog_show_title{
+  font-size: 2.4rem;
+}
+.subtitle.is-size-4{
+  text-align: center;
+
+}
+
+.hero-padding.hero-padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+
+
+
+img.random-image {
+  height: 120px;
+}
+
+img.dog-show-image {
+border-radius: 80px;
+box-shadow: 6px 6px 10px 0 rgba(0,0,0,0.5);
+
+}
+
+img.randomdog-show-image {
+  border-radius: 100px;
+  box-shadow: 3px 3px 10px 0 rgba(0,0,0,0.5);
+  height: 280px;
+  width: 320px;
+  border: #cc99a2  3px;
+  box-shadow: 7px 7px 10px #b2868e;
+}
+
+
+
+div {
+  .title{
+    font-family: $primary-font;
+    color: $primary-color;
+
+  }
+  .subtitle {
+    font-family: $fourth-font;;
+    font-size: 20px;
+  }
+
+.navbar-item img {
+  max-height: 4rem;
+  background-color: #e5acb6;
+}
+}
+
+
+
+
+#navbar_style {
+   background-color: #f1d6cc;
+
+}
+
+#navbar_style a{
+  background-color: #f1d6cc;
+}
+
+div.navbar-menu.is-active
+{
+  background-color: #f1d6cc;
+}
+
+
+.input {
+  border-color: #fff;
+  outline: none;
+
+    &:focus:hover:active {
+      border-color: #fff;
+      outline: none;
+  }
+}
+
+.card {
+  border: grey solid 2px;
+  border-radius: 10px 10px 10px;
+}
+
+.card:hover {
+  border: #f1d6cc solid 4px;
+  border-radius: 10px 10px 10px;
+}
+
+.card-content > .subtitle {
+  color: #000000;
+  font-size: 12px;
+
+}
+
+.column.headerDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+form {
+  width: 100%;
+  font-style: $secondary-font;
+  font-weight: bolder;
+}
+
+.button.search-button {
+  background-color: $primary-color;
+  font-style: $secondary-font;
+  font-weight: bolder;
+  color: #fff;
+  border: 1px white solid;
+  border-radius: 5px 5px 5px;
+
+  &:focus{
+    color: #fff;
+    outline: none;
+    border-color: #fff;
+
+  }
+
+
+}
+
+
+#section_dog_show{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 6rem
+
+}
+
+
+#random_image{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+#click_bone{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: $five-font;
+}
+
+
+
+.bone{
+  font-family: $five-font;
+  font-size: 22.8px;
+  margin: 20px;
+  position: relative;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.c1, .c2, .c3, .c4{
+  background:#e5acb6;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #696969;
+  border-radius: 50%;
+  position:absolute;
+}
+
+.c1{
+  left: 0;
+  top: 0;
+}
+.c2{
+  right: 0;
+  top: 0;
+}
+.c3{
+  left: 0;
+  bottom: 0;
+}
+.c4{
+  bottom: 0;
+  right: 0;
+}
+.b1 {
+  background:#e5acb6;
+  height: 30px;
+  width: 120px;
+  position:absolute;
+  left: 15px;
+  top: 15px;
+}
+.b2 {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border-top: 1px solid #696969;
+  border-bottom: 1px solid #696969;
+  text-align: center;
+}

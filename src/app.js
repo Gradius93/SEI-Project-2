@@ -1,54 +1,38 @@
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import './style.scss'
 import 'bulma'
-
-import Navbar from './components/Navbar'
 import Home from './components/Home'
+import DogShow from './components/DogShow'
 import DogIndex from './components/DogIndex'
-import DogsShow from './components/DogsShow'
 import SearchDog from './components/SearchDog'
+import NavBar from './components/Navbar'
 
-import Footer from './components/Footer'
-
-
-class App extends React.Component{
+class App extends React.Component {
   constructor() {
     super()
-    this.state = {
-      footer: {
-        text: [
-          'Project-02 © General Assembly 2019',
-          'Created by: Valeria Bocanegra and Sean Gray',
-          'Dog Pictures provided by'
-        ]
-      }
-    }
+    this.state = {}
   }
 
   render() {
-    return(
+    return (
       <Router>
-        <main>
-          <Navbar />
+        <NavBar />
+        <div>
           <Switch>
             <Route path="/dogs/search" component={SearchDog} />
-            <Route path="/dogs/:id" component={DogsShow} />
+            <Route path='/dogs/:id' component={DogShow} />
             <Route path="/dogs" component={DogIndex} />
-            <Route path="/" component={Home} />
+            <Route exact path='/' component={Home} />
+
           </Switch>
-        </main>
-        <Footer footer={this.state.footer} />
-
+        </div>
       </Router>
-
     )
   }
 }
 
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+
+ReactDOM.render(<App />, document.getElementById('root'))

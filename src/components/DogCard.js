@@ -1,16 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import Loading from './Loading'
 
 class DogCard extends React.Component {
 
   constructor(props) {
     super(props)
-
     this.state = {
-      dog: null
+      dog: []
     }
-
   }
 
   componentDidMount(){
@@ -28,19 +27,19 @@ class DogCard extends React.Component {
   }
 
   render() {
-    if(!this.state.dog) return null
-    console.log(this.state)
+    console.log(this.props.id, 'DIDIIIIIIIohohohoho')
+    if(!this.state.dog) return <Loading />
     return(
       <div className="card">
-        <div className="card-header">
-          <h3 className="columns is-multiline title is-2">{this.props.name}</h3>
-        </div>
         <div className="card-image">
-          <figure className="columns is-multiline image is-1by1">
-            <img src={this.state.dog.image} />
+          <figure className="image is-5by4">
+            <Link to={`/dogs/${this.props.id}`}>
+              {<img src={this.state.dog.image} alt={this.props.name} />}
+            </Link>
           </figure>
         </div>
-        <audio src="media/sound1.mp3"></audio>
+
+        <Link to={`/dogs/${this.props.id}`}><div id="subtitle_is5" className="subtitle is-size-4">{this.props.name}</div></Link>
       </div>
     )
   }

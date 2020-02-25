@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Select from 'react-select'
-
+import Loading from './Loading'
 
 class SearchDog extends React.Component {
 
@@ -37,16 +37,19 @@ class SearchDog extends React.Component {
             dog.image = res.data[0].url
             this.setState({ dog })
           })
+
+        console.log(this.res.data.breed_id, 'FELPA')
       })
   }
 
   render() {
+    if(!this.state.dogs) return <Loading />
     return(
       <div className="container">
         <div className="columns">
           <div className="column is-half is-offset-one-quarter">
             <Select
-              placeholder={'Select something'}
+              placeholder={'Search for a dog breed'}
               onChange={this.handleChange}
 
               options={this.state.dogs.map(dog => {
@@ -59,24 +62,25 @@ class SearchDog extends React.Component {
             />
           </div>
         </div>
+
         {this.state.dog &&
-          <section className="section">
-            <div className="container">
-              <div className="level">
-                <div className="level-left">
-                  <h1 className="title is-1">{this.state.dog.name}</h1>
-                </div>
+          <section className="section" id="section_dog_show">
+            <div className="columns">
+              <div className="column is-half-desktop is-full-tablet">
+                <figure className="image is-4by4">
+                  <img src={this.state.dog.image} alt={this.state.dog.name} className="dog-show-image"/>
+                </figure>
               </div>
-              <div className="columns">
-                <div className="column is-half-desktop is-full-tablet">
-                  <figure className="image">
-                    <img src={this.state.dog.image} />
-                  </figure>
-                </div>
-                <div className="column is-half-desktop is-full-tablet">
-                  <h2 id="contenido" className="title is-3">Breed For:
-                    {this.state.dog.bred_for}</h2>
-                  <h2 id="contenido" className="title is-3">Temperament: {this.state.dog.temperament}</h2>
+              <div className="column is-two-thirds-desktop">
+                <div className="title is-3" id="dog_show_title">{this.state.dog.name}</div>
+                <hr id="hr1"/ >
+
+
+                <div className="column is-full-desktop is-full-tablet" id="dog_show_card">
+                  <div><strong>Breed for:</strong> {this.state.dog.bred_for}</div>
+
+                  <br />
+                  <div><strong>Temperament:</strong> {this.state.dog.temperament}</div>
                 </div>
               </div>
             </div>

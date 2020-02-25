@@ -1,29 +1,22 @@
 import React from 'react'
+import RandomDog from './RandomDog'
 
+class Home extends React.Component {
+  constructor(){
+    super()
+  }
 
-import './style.scss'
+  render() {
+    return(
+      <section>
+        <RandomDog />
+        <div className="container">
 
-const Home = () => {
-  return(
-    <section className="section is-medium" id="home">
-      <div className="container">
+        </div>
+      </section>
+    )
+  }
 
-        <table className="table">
-          <tr>
-            <td  className="color"><h1 className="title is-1">Welcome to Woof Woof Dog Page</h1></td>
-            <td> <img src="/media/didi.jpg" className="shake"></img> </td>
-          </tr>
-          <tr>
-            <td  className="color"><h2 className="subtitle is-2">A site for Dog Breeds</h2></td>
-          </tr>
-        </table>
-
-      </div>
-
-
-    </section>
-  )
 }
-
 
 export default Home
